@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM JS HAndson</title>
+    <style>
+        body{
+            background: radial-gradient( red , yellow, rgb(235, 123, 141));
+            color: white;
+        }
+        h1{
+            color: rgb(8, 92, 64);
+            text-align: center;
+        }
+        p{
+            color: gray;
+            padding: 15px;
+        }
+        pre{
+            color: black;
+            background-color: white;
+            margin: 20px;
+        }
+        .main-flex{
+            display: flex;
+            flex-direction: column;
+          
+            justify-content: space-between;
+        }
+        .sub-flex{
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            border: 2px solid white;
+            background-color: blueviolet;
+        }
+        #btn2,#btn1{
+        background-color: rgb(126, 126, 186);
+            padding: 20px;
+            border-radius: 30px;
+        }
+        .tim-main{
+            color: black;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .tim{
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            font-size: 2em;
+            margin: 15px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS-Handson-9 (DOM)</h1>
+   <p id="text"> 
+    <b>Write the code to access element which is having id as "text"</b></p>
+    <pre>document.getElementById('#text').innerHTML='this is js handson'</pre>
+ 
+    <p><b>Write the code to access element which is having tag as "h1"</b></p>
+    <pre>document.getElementBytagname('h1').innerHTML='this is js handson'</pre>
+ 
+    <p><b>Write the code to access element which is having class as "box"</b></p>
+    <pre>document.getElementByclass('.text').innerHTML='this is js handson'</pre>
+ 
+    
+    <p><b>"<h2>Hello </h2>
+
+        Change the heading from ""Hello"" to ""Hello World"" using DOM functions"</b></p>
+    <pre>document.getElementsByTagName('h2').innerHTML='Hello Word'</pre>
+ 
+
+
+    <p><b> Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</b></p>
+    <div class="main-flex">
+        <div class="sub-flex"></div>
+        <div class="sub-flex"></div>
+        <div class="sub-flex"></div>
+    </div>
+    <button id="btn1" type="submit" onclick="onclickbutton()"> Click and Change Flex direction</button>
+
+    <pre>function onclickbutton(){
+    
+        if( flexDirection == column){
+            document.getElementsByClassName('main-flex').style.flexDirection = 'row'
+        }
+        else {
+            document.getElementsByClassName('main-flex').style.flexDirection = 'column'
+        }   
+    }</pre>
+ 
+
+    <p><b>What's the difference between window vs document?</b></p>
+    <div class="main-flex">
+        <div class="sub-flex">The document object represent a web page that is loaded in the browser. By accessing the document object, we can access the element in the HTML page.
+        </div>
+        <div class="sub-flex">The window object is the topmost object of the DOM hierarchy. It represents a browser window or frame that displays the contents of the webpage. Whenever a window appears on the screen to display the contents of the document, the window object is created.
+        </div>
+   
+        <p><b><h3>Hello </h3>
+
+            Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions"</b></p>
+            <pre>const abhi = document.getElementsByTagName('h3')[0]
+                abhi.setAttribute('id','heading')
+                const sec = document.getElementById('heading')
+                sec.style.color = 'red'</pre>
+
+        <p><b>Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</b></p>
+        <h1 id="hello">Hello Word</h1>
+        <button id="btn2" >Replace Text</button>
+        
+        <pre>
+            document.getElementById('btn2').addEventListener('click', (e) =>{
+              e.preventDefault()
+            document.getElementById('hello').textContent = "WelCome to Elevation academy"   
+            })
+            </pre>
+
+        <p><b>Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</b></p>
+        <div class="tim-main"> 
+        <div class="tim" id="hr"></div>
+         <div class="tim" id="min"></div>
+         <div class="tim" id="sec"></div>
+        </div>
+        <pre></pre>
+
+    <script src="./main.js"></script>
+</body>
+</html>
